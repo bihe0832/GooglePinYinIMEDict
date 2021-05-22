@@ -34,8 +34,8 @@ int main(int argc, char* argv[]) {
     if (argc >= 3)
         success = dict_trie->build_dict(argv[1], argv[2]);
     else
-        success = dict_trie->build_dict("../data/rawdict_utf16_65105_freq.txt.bak",
-                                        "../data/valid_utf16.txt");
+        success = dict_trie->build_dict("./data/rawdict_utf16_65105_freq.txt",
+                                        "./data/valid_utf16.txt");
 
     if (success) {
         printf("Build dictionary successfully.\n");
@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
     if (argc >= 4)
         success = dict_trie->save_dict(argv[3]);
     else
-        success = dict_trie->save_dict("dict_pinyin.dat");
+        success = dict_trie->save_dict("./dict/dict_pinyin.dat");
 
     const  char* dicPath="dict_pinyin.dat";
     FILE *fp = fopen(dicPath, "rb");
